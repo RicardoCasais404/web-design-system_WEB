@@ -1,22 +1,22 @@
 
 /* Header */
 
-.header {
+header {
     background-color: #f8f9fa;
     padding: 20px;
     text-align: center;
 }
 
-.header h1 {
+header h1 {
     margin: 0;
     font-size: 2em;
     color: #333;
 }
 
-.header nav ul {
-    list-style-type: none;
+header nav li {
     padding: 0;
     display: inline;
+    list-style: none;
 }
 
 
