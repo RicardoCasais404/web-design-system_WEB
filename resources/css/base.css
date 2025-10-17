@@ -8,8 +8,7 @@ html, body {
     background-color: #fcfcfc;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-
+    scroll-padding-top: 120px;
 }
 
 header {
@@ -18,8 +17,7 @@ header {
   z-index: 1000;
   background-color: #fcfcfc;
   transition: box-shadow 0.3s ease;
-  border: 2px solid red; /* for testing */
-  height: 120px; /* if you want a fixed header height */
+  height: 120px;
 }
 
 
@@ -31,12 +29,16 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px;
+  padding-left: 60px;
+  padding-right: 100px;
+  padding-bottom: 10px;
 }
 
 header nav img {
-  height: 100px;              
+  height: 120px;              
   width: auto;
+  display: block;
+  max-height: 100%;
   padding: 0;
   margin: 0;
   object-fit: contain;
@@ -84,10 +86,6 @@ header nav li {
 
 /* Main Content Styles */
 
-main {
-    min-height: 2000px;
-}
-
 main h1 {
     font-size: 36px;
     color: #000;
@@ -112,9 +110,10 @@ main h2 {
 .color-palette,
 .fonts,
 .text-styles {
-  padding: 20px 5%;
+  padding: 40px 10%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
+  padding-bottom: 80px;
 }
 
 
@@ -124,8 +123,7 @@ main h2 {
 .color-palette {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  padding: 20px 5%;
+  gap: 20px;
   width: 100%;
 }
 
@@ -133,12 +131,12 @@ main h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 200px;
 }
 
 .swatch {
-  width: 300px;
-  height: 150px;
+  width: 200px;
+  height: 300px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.17);
 }
 
@@ -159,32 +157,56 @@ main h2 {
 /* Fonts Section */
 
 .fonts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    padding: 20px 5%;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: flex-start;    
+  justify-content: space-between;
 }
 
-.poppins, .roboto {
+.poppins,
+.roboto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    
+  text-align: left;           
   width: calc(50% - 25px);
   max-width: 500px;
 }
 
+.poppins h2,
+.roboto h2 {
+  margin: 0 0 8px 0;         
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  line-height: 1.1;
+}
+
 .poppins h2 {
-    font-weight: 900;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  color: #000;
 }
 
 .roboto h2 {
-    font-weight: 300;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  color: #000;
 }
 
-.fonts h2 {
-  margin-bottom: 10px;
+.poppins p,
+.roboto p {
+  margin: 0 0 8px 0;
+  padding: 0;
+  line-height: 1.45;
 }
 
-.fonts p {
-  margin-bottom: 8px;
+.fonts,
+.fonts * {
+  text-align: left !important;
 }
 
 /* Poppins Styles */
@@ -244,7 +266,7 @@ main h2 {
 /* Text Styles Section */
 
 .text-styles {
-    padding: 20px 135px;
+
 }
 
 
@@ -253,6 +275,7 @@ main h2 {
 /* Footer */
 
 footer {
+    height: 100px;
     width: 100%;
     padding-top: 30px;
     text-align: center;
@@ -260,5 +283,6 @@ footer {
     font-size: 14px;
     font-weight: 200;
     color: #000;
+    background-color: #FFD54F;
     text-transform: uppercase;
 }
