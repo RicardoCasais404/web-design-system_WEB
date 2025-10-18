@@ -105,6 +105,8 @@ main h2 {
     font-weight: 700;
     text-transform: uppercase;
     padding-left: 120px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .color-palette,
@@ -267,23 +269,26 @@ main h2 {
 
 .text-styles {
   display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: flex-start;    /* avoid space-between which spreads items */
-  align-items: flex-start;        /* align boxes at the top */
-  padding: 40px 10%;              /* keep if you want the outer gutter */
+  flex-wrap: nowrap;            /* keeps boxes inline */
+  gap: 48px;                    /* spacing between boxes */
+  justify-content: flex-start; /* aligns boxes left */
+  align-items: flex-start;      /* aligns boxes to the top of the row */
+  padding: 40px 10%;
   box-sizing: border-box;
+  margin-bottom: 25px;
 }
-
 
 .text-box {
-  flex: 0 1 calc(50% - 25px);
-  max-width: 500px;
+  flex: 0 0 220px;              /* fixed width per box */
+  max-width: 220px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  flex-direction: column;       /* stack content vertically */
+  justify-content: flex-start;  /* content starts at top */
+  align-items: flex-start;      /* content aligns left */
+  gap: 8px;
 }
+
+
 
 .text-box h1,
 .text-box h2,
@@ -297,12 +302,14 @@ main h2 {
   text-align: left;
 }
 
+.text-box h1, .text-box
+h2 {
+  line-height: 1;
+}
 
-@media (max-width: 720px) {
-  .text-box {
-    flex: 0 1 100%;
-    max-width: 100%;
-  }
+@media (max-width: 960px) {
+  .text-styles { flex-wrap: wrap; justify-content: center; }
+  .text-box { flex: 0 1 100%; max-width: 720px; }
 }
 
 .text-styles li {
@@ -371,6 +378,7 @@ main h2 {
 .text-styles * {
   text-align: left !important;
 }
+
 
 
 /* Footer */
